@@ -1,76 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
 <title>Nityaga RTOS — Real-Time Operating System for Agriculture | ASPF</title>
-<style>
-:root{--bg:#fafafa;--text:#1a1a1a;--muted:#555;--primary:#0d4f1c;--accent:#e65100;--border:#e0e0e0}
-*{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.6;color:var(--text);background:var(--bg);margin:0}.container{max-width:860px;margin:0 auto;padding:0 24px}header{border-bottom:1px solid var(--border);padding:24px 0 16px;background:#fff}h1{font-size:1.75rem;margin:8px 0 4px;font-weight:600}.subtitle{color:var(--muted);font-size:.95rem}.tagline{font-size:1.35rem;font-weight:500;margin:24px 0 12px}nav a{margin-right:20px;color:var(--primary);text-decoration:none;font-size:.9rem}section{padding:48px 0;border-bottom:1px solid var(--border)}h2{font-size:1.5rem;margin-bottom:16px;color:var(--primary)}table{width:100%;border-collapse:collapse;margin:16px 0}th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border)}th{background:#f8f8f8}pre{background:#f5f5f5;padding:16px;border-radius:6px;overflow-x:auto;font-size:.85rem}.stats{display:flex;gap:32px;margin:24px 0;flex-wrap:wrap}.stat{font-weight:600}.stat span{display:block;font-weight:400;color:var(--muted);font-size:.85rem}.note{background:#fff8e1;border-left:4px solid var(--accent);padding:12px 16px;margin:16px 0}
-/* High-motion graphical RTOS scheduler */
-.scheduler{background:#0f172a;color:#e2e8f0;border-radius:12px;padding:24px;margin:32px 0;overflow:hidden;position:relative}
-.scheduler::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 50%,rgba(34,197,94,.15),transparent 50%);pointer-events:none}
-.timeline{position:relative;height:160px;background:#1e293b;border-radius:8px;margin-top:16px;overflow:hidden}
-.tick{position:absolute;bottom:0;width:1px;height:8px;background:#475569}
-.task{position:absolute;height:28px;border-radius:4px;display:flex;align-items:center;padding:0 8px;font-size:.75rem;font-weight:600;color:#fff;animation:slide 10s linear infinite;box-shadow:0 0 12px currentColor}
-.t-high{background:linear-gradient(90deg,#22c55e,#16a34a);top:16px;width:20%}
-.t-med{background:linear-gradient(90deg,#3b82f6,#2563eb);top:56px;width:25%;animation-delay:1.5s}
-.t-low{background:linear-gradient(90deg,#f59e0b,#d97706);top:96px;width:18%;animation-delay:3s}
-.t-idle{background:#64748b;top:136px;width:12%;animation-delay:5s;opacity:.7}
-@keyframes slide{0%{left:-25%}100%{left:110%}}
-.priority-ring{width:80px;height:80px;border-radius:50%;border:4px solid #22c55e;display:inline-flex;align-items:center;justify-content:center;margin:8px;animation:pulse 2s ease-in-out infinite;font-size:.7rem;text-align:center}
-@keyframes pulse{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(34,197,94,.4)}50%{transform:scale(1.05);box-shadow:0 0 0 8px rgba(34,197,94,0)}}
-footer{padding:32px 0;color:var(--muted);font-size:.85rem}
-</style>
+<meta name="description" content="Nityaga RTOS by Agriculture Service of Product Farm (ASPF): hard real-time scheduling for agricultural control systems.">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header><div class="container">
-<h1>Nityaga RTOS</h1>
-<div class="subtitle">Agriculture Service of Product Farm (ASPF) · Real-Time Operating System for Agriculture Technology</div>
-<nav><a href="#what">What it is</a><a href="#features">Capabilities</a><a href="#architecture">Architecture</a><a href="#quality">Engineering Quality</a></nav>
-</div></header>
-<main>
-<div class="container">
-<p class="tagline">Deterministic control for every field actuator and sensor.</p>
-<p>Nityaga RTOS provides hard real-time scheduling and bounded latency for agricultural cyber-physical systems. It is developed by <a href="https://www.apservicefarm.com/">Agriculture Service of Product Farm (ASPF)</a> as part of its agriculture research and innovation work.</p>
-<div class="stats">
-<div class="stat"><span>Hard real-time</span>Deterministic deadlines</div>
-<div class="stat"><span>&lt;5 µs</span>Typical context switch</div>
-<div class="stat"><span>Priority + RR</span>Preemptive model</div>
-<div class="stat"><span>0</span>Unsafe kernel paths</div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="index.html">Nityaga RTOS</a>
+<nav id="site-nav">
+<a href="index.html" aria-current="page">Home</a>
+<a href="index.html#scheduler">Scheduler</a>
+<a href="how-it-works.html">How it works</a>
+<a href="security.html">Security</a>
+<a href="about.html">About ASPF</a>
+</nav>
 </div>
-
+</header>
+<main id="main">
+<section class="hero hero-home">
+<div class="wrap">
+<p class="eyebrow">Agriculture Service of Product Farm (ASPF) · Real-Time Operating System for Agriculture Technology</p>
+<h1>Deterministic control for <span class="grad">every field actuator.</span></h1>
+<p class="lead">Nityaga RTOS provides hard real-time scheduling and bounded latency for agricultural cyber-physical systems. It is developed by <a href="about.html">Agriculture Service of Product Farm (ASPF)</a> as part of its agriculture research and innovation work.</p>
+</div>
+</section>
+<section class="wrap stats">
+<div class="stat"><strong>Hard real-time</strong><span>Deterministic deadlines</span></div>
+<div class="stat"><strong>&lt;5 µs</strong><span>Typical context switch</span></div>
+<div class="stat"><strong>Priority + RR</strong><span>Preemptive model</span></div>
+<div class="stat"><strong>0</strong><span>Unsafe kernel paths</span></div>
+</section>
+<section id="scheduler" class="wrap">
+<h2>Live scheduler visualization</h2>
+<p>This runs entirely in your browser — nothing is sent anywhere. Higher-priority tasks preempt lower-priority ones. Continuous motion shows deterministic execution on a 1 ms tick.</p>
 <div class="scheduler">
-<strong>Live scheduler visualization (1 ms ticks)</strong>
 <div class="timeline">
 <div class="task t-high">Soil Moisture (P8)</div>
 <div class="task t-med">Irrigation (P6)</div>
 <div class="task t-low">Nutrient (P4)</div>
 <div class="task t-idle">Logger (P2)</div>
 </div>
-<div style="margin-top:12px;font-size:.8rem;color:#94a3b8">Higher priority preempts lower. Continuous motion shows deterministic task execution. Priority rings pulse on schedule.</div>
-<div style="text-align:center;margin-top:16px">
+<div class="priority-rings">
 <div class="priority-ring">P8<br>Running</div>
-<div class="priority-ring" style="border-color:#3b82f6">P6<br>Ready</div>
-<div class="priority-ring" style="border-color:#f59e0b">P4<br>Ready</div>
+<div class="priority-ring med">P6<br>Ready</div>
+<div class="priority-ring low">P4<br>Ready</div>
 </div>
 </div>
-<p class="note">The live visualization runs entirely in your browser. Everything else on this site works without it.</p>
-</div>
-
-<section id="what"><div class="container">
+<p class="note">The live visualization needs JavaScript. Everything else on this site works without it.</p>
+</section>
+<section id="what" class="wrap">
 <h2>What it is</h2>
 <p>Agricultural control loops require guarantees that general-purpose systems cannot provide. Soil moisture sensors must trigger valves within hard deadlines. Machinery actuators and drone flight stacks demand bounded interrupt latency. Nityaga RTOS is the software layer that enforces these timing constraints before decisions reach actuators or research pipelines.</p>
-<h3>Detect</h3><p>Runtime monitors and watchdog timers reveal priority inversion and deadline misses.</p>
-<h3>Schedule</h3><p>Fixed-priority preemptive scheduling. Round-robin within equal priorities. Rate-monotonic and earliest-deadline-first options available.</p>
-<h3>Protect</h3><p>Stack guards, optional MPU isolation, and fail-safe defaults that hold actuators in safe states.</p>
-<div class="note"><strong>Not a general-purpose OS.</strong> Nityaga is purpose-built for deterministic agricultural control. It does not provide non-deterministic services.</div>
-</div></section>
-
-<section id="features"><div class="container">
+<div class="grid three">
+<div class="card"><h3>Detect</h3><p>Runtime monitors and watchdog timers reveal priority inversion and deadline misses.</p></div>
+<div class="card"><h3>Schedule</h3><p>Fixed-priority preemptive scheduling. Round-robin within equal priorities. Rate-monotonic and earliest-deadline-first options available.</p></div>
+<div class="card"><h3>Protect</h3><p>Stack guards, optional MPU isolation, and fail-safe defaults that hold actuators in safe states.</p></div>
+</div>
+<p class="note"><strong>Not a general-purpose OS.</strong> Nityaga is purpose-built for deterministic agricultural control. It does not provide non-deterministic services.</p>
+</section>
+<section id="capabilities" class="wrap">
 <h2>Capabilities</h2>
-<table>
-<tr><th>Feature</th><th>What you get</th></tr>
+<div class="table-scroll"><table>
+<thead><tr><th>Feature</th><th>What you get</th></tr></thead>
+<tbody>
 <tr><td>Fixed-priority preemptive scheduler</td><td>Hard real-time guarantees; higher priority always runs</td></tr>
 <tr><td>Interrupt latency bounds</td><td>Configurable worst-case response for sensor ISRs</td></tr>
 <tr><td>Task synchronization</td><td>Mutexes with priority inheritance, semaphores, message queues</td></tr>
@@ -78,31 +76,12 @@ footer{padding:32px 0;color:var(--muted);font-size:.85rem}
 <tr><td>Watchdog &amp; health</td><td>Hardware watchdog integration + software monitors</td></tr>
 <tr><td>Low power modes</td><td>Tickless idle for battery-powered field nodes</td></tr>
 <tr><td>Agricultural primitives</td><td>Helpers for periodic sampling and actuator control</td></tr>
-</table>
-</div></section>
-
-<section id="architecture"><div class="container">
-<h2>Architecture</h2>
-<p>Classic microkernel-style design optimized for resource-constrained agricultural controllers (ARM Cortex-M, RISC-V, selected ARM64).</p>
-<ul>
-<li>Minimal kernel with deterministic scheduling core</li>
-<li>User-level tasks with optional isolation</li>
-<li>Drivers for common agricultural peripherals (Modbus, CAN, RS-485, PWM, ADC)</li>
-<li>Integration points for ASPF AUDP-ECM and AUDP-DSP layers</li>
-</ul>
-<pre><code>// Example: Periodic soil moisture task
-void soil_moisture_task(void *arg) {
-    for (;;) {
-        float moisture = read_capacitive_sensor();
-        if (moisture < THRESHOLD) actuate_valve(OPEN);
-        nityaga_delay_until_next_period(1000); // hard 1 Hz
-    }
-}</code></pre>
-</div></section>
-
-<section id="quality"><div class="container">
+</tbody>
+</table></div>
+</section>
+<section id="quality" class="wrap">
 <h2>Engineering quality</h2>
-<ul>
+<ul class="checks">
 <li>Memory-safe by construction in the kernel core</li>
 <li>Extensive unit and hardware-in-the-loop testing on representative boards</li>
 <li>Static analysis and formal timing analysis for critical paths</li>
@@ -110,12 +89,14 @@ void soil_moisture_task(void *arg) {
 <li>No telemetry or tracking</li>
 </ul>
 <p>Detailed algorithms and internal specifications remain confidential.</p>
-</div></section>
+</section>
 </main>
-<footer><div class="container">
+<footer class="foot">
+<div class="wrap">
 <p>Nityaga RTOS is proprietary software of Agriculture Service of Product Farm (ASPF). Licensing and research enquiries: <a href="mailto:sbruicesingh@haclon.in">sbruicesingh@haclon.in</a></p>
 <p>Related: <a href="https://sbruices.github.io/AUDP-ECM-Website/">AUDP-ECM</a> · <a href="https://agriculture-service-of-product-farm.github.io/AUDP-DSP-Website/">AUDP-DSP</a></p>
-<p style="margin-top:16px">This site is informational. It sets no cookies and loads no third-party resources.</p>
-</div></footer>
+<p class="small">This site is informational. It sets no cookies and loads no third-party resources.</p>
+</div>
+</footer>
 </body>
 </html>
