@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
 <title>Nityaga RTOS — Real-Time Operating System for Agriculture | ASPF</title>
 <meta name="description" content="Nityaga RTOS by Agriculture Service of Product Farm (ASPF): hard real-time scheduling for agricultural control systems.">
 <link rel="stylesheet" href="style.css">
@@ -13,7 +13,7 @@
 <header class="top">
 <div class="wrap bar">
 <a class="brand" href="index.html">
-<img src="logo.png" alt="Nityaga RTOS" class="brand-logo" height="36">
+<img src="LOGO_DATA_URI" alt="Nityaga RTOS" class="brand-logo" height="36">
 </a>
 <nav id="site-nav">
 <a href="index.html" aria-current="page">Home</a>
@@ -27,79 +27,11 @@
 <main id="main">
 <section class="hero hero-home">
 <div class="wrap">
-<img src="logo.png" alt="Nityaga RTOS" class="hero-logo" width="420">
+<img src="LOGO_DATA_URI" alt="Nityaga RTOS" class="hero-logo" width="420">
 <p class="eyebrow">Agriculture Service of Product Farm (ASPF) · Real-Time Operating System for Agriculture Technology</p>
 <h1>Deterministic control for <span class="grad">every field actuator.</span></h1>
 <p class="lead">Nityaga RTOS provides hard real-time scheduling and bounded latency for agricultural cyber-physical systems. It is developed by <a href="about.html">Agriculture Service of Product Farm (ASPF)</a> as part of its agriculture research and innovation work.</p>
 </div>
 </section>
-<section class="wrap stats">
-<div class="stat"><strong>Hard real-time</strong><span>Deterministic deadlines</span></div>
-<div class="stat"><strong><5 µs</strong><span>Typical context switch</span></div>
-<div class="stat"><strong>Priority + RR</strong><span>Preemptive model</span></div>
-<div class="stat"><strong>0</strong><span>Unsafe kernel paths</span></div>
-</section>
-<section id="scheduler" class="wrap">
-<h2>Live scheduler visualization</h2>
-<p>This runs entirely in your browser — nothing is sent anywhere. Higher-priority tasks preempt lower-priority ones. Continuous motion shows deterministic execution on a 1 ms tick.</p>
-<div class="scheduler">
-<div class="timeline">
-<div class="task t-high">Soil Moisture (P8)</div>
-<div class="task t-med">Irrigation (P6)</div>
-<div class="task t-low">Nutrient (P4)</div>
-<div class="task t-idle">Logger (P2)</div>
-</div>
-<div class="priority-rings">
-<div class="priority-ring">P8<br>Running</div>
-<div class="priority-ring med">P6<br>Ready</div>
-<div class="priority-ring low">P4<br>Ready</div>
-</div>
-</div>
-<p class="note">The live visualization needs JavaScript. Everything else on this site works without it.</p>
-</section>
-<section id="what" class="wrap">
-<h2>What it is</h2>
-<p>Agricultural control loops require guarantees that general-purpose systems cannot provide. Soil moisture sensors must trigger valves within hard deadlines. Machinery actuators and drone flight stacks demand bounded interrupt latency. Nityaga RTOS is the software layer that enforces these timing constraints before decisions reach actuators or research pipelines.</p>
-<div class="grid three">
-<div class="card"><h3>Detect</h3><p>Runtime monitors and watchdog timers reveal priority inversion and deadline misses.</p></div>
-<div class="card"><h3>Schedule</h3><p>Fixed-priority preemptive scheduling. Round-robin within equal priorities. Rate-monotonic and earliest-deadline-first options available.</p></div>
-<div class="card"><h3>Protect</h3><p>Stack guards, optional MPU isolation, and fail-safe defaults that hold actuators in safe states.</p></div>
-</div>
-<p class="note"><strong>Not a general-purpose OS.</strong> Nityaga is purpose-built for deterministic agricultural control. It does not provide non-deterministic services.</p>
-</section>
-<section id="capabilities" class="wrap">
-<h2>Capabilities</h2>
-<div class="table-scroll"><table>
-<thead><tr><th>Feature</th><th>What you get</th></tr></thead>
-<tbody>
-<tr><td>Fixed-priority preemptive scheduler</td><td>Hard real-time guarantees; higher priority always runs</td></tr>
-<tr><td>Interrupt latency bounds</td><td>Configurable worst-case response for sensor ISRs</td></tr>
-<tr><td>Task synchronization</td><td>Mutexes with priority inheritance, semaphores, message queues</td></tr>
-<tr><td>Memory protection</td><td>Stack canaries and optional MPU partitions</td></tr>
-<tr><td>Watchdog & health</td><td>Hardware watchdog integration + software monitors</td></tr>
-<tr><td>Low power modes</td><td>Tickless idle for battery-powered field nodes</td></tr>
-<tr><td>Agricultural primitives</td><td>Helpers for periodic sampling and actuator control</td></tr>
-</tbody>
-</table></div>
-</section>
-<section id="quality" class="wrap">
-<h2>Engineering quality</h2>
-<ul class="checks">
-<li>Memory-safe by construction in the kernel core</li>
-<li>Extensive unit and hardware-in-the-loop testing on representative boards</li>
-<li>Static analysis and formal timing analysis for critical paths</li>
-<li>Cross-platform continuous integration including ARM64 and RISC-V</li>
-<li>No telemetry or tracking</li>
-</ul>
-<p>Detailed algorithms and internal specifications remain confidential.</p>
-</section>
-</main>
-<footer class="foot">
-<div class="wrap">
-<p>Nityaga RTOS is proprietary software of Agriculture Service of Product Farm (ASPF). Licensing and research enquiries: <a href="mailto:sbruicesingh@haclon.in">sbruicesingh@haclon.in</a></p>
-<p>Related: <a href="https://sbruices.github.io/AUDP-ECM-Website/">AUDP-ECM</a> · <a href="https://agriculture-service-of-product-farm.github.io/AUDP-DSP-Website/">AUDP-DSP</a></p>
-<p class="small">This site is informational. It sets no cookies and loads no third-party resources.</p>
-</div>
-</footer>
 </body>
 </html>
