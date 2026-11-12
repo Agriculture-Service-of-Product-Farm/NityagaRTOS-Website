@@ -4,17 +4,32 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
-<title>Importance & Need | Nityaga RTOS</title>
+<title>Why Deterministic RTOS Control Matters in Agriculture | Nityaga RTOS | ASPF</title>
+<meta name="description" content="Professional overview of why hard real-time operating systems are essential for precision agriculture, irrigation control, and agricultural cyber-physical systems. Client-facing diagrams and benefits of Nityaga RTOS.">
+<meta name="keywords" content="agricultural RTOS, real-time operating system agriculture, precision farming control, deterministic scheduling irrigation, Nityaga RTOS, ASPF, agricultural IoT control, hard real-time agriculture">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://agriculture-service-of-product-farm.github.io/NityagaRTOS-Website/importance.html">
+<meta property="og:title" content="Why Deterministic Control Matters in Agriculture | Nityaga RTOS">
+<meta property="og:description" content="High-level professional diagrams showing the need for real-time guarantees in agricultural control systems.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="style.css">
 <style>
-.diagram { background: #0f172a; border-radius: 16px; padding: 24px; margin: 32px 0; color: #e2e8f0; overflow-x: auto; }
-.flow { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; align-items: center; }
-.flow-step { background: #1e293b; border: 2px solid #22c55e; border-radius: 12px; padding: 16px 20px; min-width: 160px; text-align: center; font-weight: 600; }
-.flow-arrow { font-size: 28px; color: #22c55e; }
-.arch-box { background: #1e293b; border-radius: 12px; padding: 20px; margin: 8px; border: 1px solid #334155; }
-.arch-title { color: #22c55e; font-weight: 700; margin-bottom: 8px; }
-.grid-arch { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.pro-diagram { background: linear-gradient(145deg, #0f172a, #1e293b); border-radius: 20px; padding: 32px; margin: 40px 0; box-shadow: 0 10px 40px rgb(0 0 0 / 25%); }
+.pro-diagram h3 { color: #22c55e; margin-top: 0; text-align: center; font-size: 1.1rem; letter-spacing: .04em; }
+.svg-wrap { width: 100%; max-width: 900px; margin: 0 auto; }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Why Deterministic RTOS Control Matters in Agriculture",
+  "description": "Client-facing overview of the importance of hard real-time scheduling for agricultural cyber-physical systems.",
+  "author": {"@type": "Organization", "name": "Agriculture Service of Product Farm (ASPF)"},
+  "publisher": {"@type": "Organization", "name": "Agriculture Service of Product Farm"},
+  "mainEntityOfPage": "https://agriculture-service-of-product-farm.github.io/NityagaRTOS-Website/importance.html"
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -31,68 +46,116 @@
 </div>
 </header>
 <main id="main" class="wrap">
-<p class="eyebrow">Client Overview</p>
+<p class="eyebrow">Client Overview · Professional Diagrams</p>
 <h1>Why Deterministic Control Matters in Agriculture</h1>
-<p>Modern agricultural systems depend on precise, timely responses. Delays or missed deadlines can affect yield, resource use, equipment safety, and operational reliability. Nityaga RTOS is designed to address these requirements at the control layer.</p>
+<p class="lead">Modern precision agriculture depends on timely, predictable responses from sensors to actuators. Nityaga RTOS supplies the hard real-time guarantees required for reliable field control.</p>
 
-<h2>The Need for Real-Time Guarantees</h2>
-<div class="diagram">
-<div class="flow">
-<div class="flow-step">Sensor Reading</div>
-<div class="flow-arrow">→</div>
-<div class="flow-step">Decision Window</div>
-<div class="flow-arrow">→</div>
-<div class="flow-step">Actuator Response</div>
-<div class="flow-arrow">→</div>
-<div class="flow-step">Safe Outcome</div>
-</div>
-<p style="text-align:center; margin-top:16px; font-size:14px; color:#94a3b8;">Typical agricultural control path requiring bounded latency</p>
-</div>
-<p>General-purpose operating systems cannot provide the timing bounds required for irrigation valves, nutrient dosing, climate control, and machinery actuators. Missed deadlines lead to over- or under-application, equipment stress, or incomplete operations.</p>
+<section>
+<h2>Agricultural Control Path Requiring Bounded Latency</h2>
+<div class="pro-diagram">
+<h3>Typical Real-Time Control Sequence</h3>
+<div class="svg-wrap">
+<svg viewBox="0 0 800 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flowchart of agricultural control path from sensor to safe outcome">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="2" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <!-- Boxes -->
+  <rect x="20" y="40" width="140" height="80" rx="12" fill="#1e293b" stroke="url(#g1)" stroke-width="3"/>
+  <text x="90" y="75" text-anchor="middle" fill="#e2e8f0" font-size="14" font-weight="700">Sensor</text>
+  <text x="90" y="95" text-anchor="middle" fill="#94a3b8" font-size="11">Reading</text>
 
-<h2>Client Benefits</h2>
+  <rect x="220" y="40" width="140" height="80" rx="12" fill="#1e293b" stroke="url(#g1)" stroke-width="3"/>
+  <text x="290" y="75" text-anchor="middle" fill="#e2e8f0" font-size="14" font-weight="700">Decision</text>
+  <text x="290" y="95" text-anchor="middle" fill="#94a3b8" font-size="11">Window</text>
+
+  <rect x="420" y="40" width="140" height="80" rx="12" fill="#1e293b" stroke="url(#g1)" stroke-width="3"/>
+  <text x="490" y="75" text-anchor="middle" fill="#e2e8f0" font-size="14" font-weight="700">Actuator</text>
+  <text x="490" y="95" text-anchor="middle" fill="#94a3b8" font-size="11">Response</text>
+
+  <rect x="620" y="40" width="140" height="80" rx="12" fill="#1e293b" stroke="url(#g1)" stroke-width="3"/>
+  <text x="690" y="75" text-anchor="middle" fill="#e2e8f0" font-size="14" font-weight="700">Safe</text>
+  <text x="690" y="95" text-anchor="middle" fill="#94a3b8" font-size="11">Outcome</text>
+
+  <!-- Arrows -->
+  <path d="M160 80 L220 80" stroke="#22c55e" stroke-width="3" marker-end="url(#arrow)" fill="none"/>
+  <path d="M360 80 L420 80" stroke="#22c55e" stroke-width="3" fill="none"/>
+  <path d="M560 80 L620 80" stroke="#22c55e" stroke-width="3" fill="none"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#22c55e"/>
+    </marker>
+  </defs>
+  <polygon points="210,75 220,80 210,85" fill="#22c55e"/>
+  <polygon points="410,75 420,80 410,85" fill="#22c55e"/>
+  <polygon points="610,75 620,80 610,85" fill="#22c55e"/>
+</svg>
+</div>
+<p style="text-align:center; margin-top:12px; color:#94a3b8; font-size:13px;">Hard deadlines must be met for irrigation, nutrient, and safety actuators</p>
+</div>
+</section>
+
+<section>
+<h2>High-Level Client System View</h2>
+<p class="note">External relationships only. Internal algorithms and architecture remain confidential.</p>
+<div class="pro-diagram">
+<h3>External Interfaces — No Internal Disclosure</h3>
+<div class="svg-wrap">
+<svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="High-level client architecture diagram showing sensors, RTOS layer, actuators and operator systems">
+  <!-- Sensors -->
+  <rect x="40" y="40" width="160" height="90" rx="14" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+  <text x="120" y="75" text-anchor="middle" fill="#22c55e" font-size="15" font-weight="700">Field Sensors</text>
+  <text x="120" y="100" text-anchor="middle" fill="#94a3b8" font-size="12">Moisture · Temp · Flow</text>
+
+  <!-- RTOS -->
+  <rect x="300" y="90" width="200" height="100" rx="16" fill="#0f172a" stroke="#22c55e" stroke-width="3"/>
+  <text x="400" y="135" text-anchor="middle" fill="#e2e8f0" font-size="16" font-weight="800">Nityaga RTOS</text>
+  <text x="400" y="158" text-anchor="middle" fill="#94a3b8" font-size="12">Deterministic Layer</text>
+
+  <!-- Actuators -->
+  <rect x="600" y="40" width="160" height="90" rx="14" fill="#1e293b" stroke="#22c55e" stroke-width="2"/>
+  <text x="680" y="75" text-anchor="middle" fill="#22c55e" font-size="15" font-weight="700">Actuators</text>
+  <text x="680" y="100" text-anchor="middle" fill="#94a3b8" font-size="12">Valves · Pumps · Motors</text>
+
+  <!-- Operator -->
+  <rect x="300" y="210" width="200" height="50" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+  <text x="400" y="240" text-anchor="middle" fill="#93c5fd" font-size="13" font-weight="600">Operator & Research Systems</text>
+
+  <!-- Connecting lines -->
+  <path d="M200 85 L300 140" stroke="#22c55e" stroke-width="2" fill="none" stroke-dasharray="4 3"/>
+  <path d="M500 140 L600 85" stroke="#22c55e" stroke-width="2" fill="none" stroke-dasharray="4 3"/>
+  <path d="M400 190 L400 210" stroke="#3b82f6" stroke-width="2" fill="none"/>
+</svg>
+</div>
+</div>
+</section>
+
+<section>
+<h2>Client Benefits of Deterministic Scheduling</h2>
 <div class="grid three">
-<div class="card"><h3>Predictable Response</h3><p>Higher-priority tasks always meet their deadlines under defined load. Irrigation and safety functions take precedence.</p></div>
-<div class="card"><h3>Resource Efficiency</h3><p>Precise timing reduces water, nutrient, and energy waste by acting only when conditions require it.</p></div>
-<div class="card"><h3>Equipment Protection</h3><p>Fail-safe defaults and watchdog monitoring help hold actuators in known-safe states on fault.</p></div>
+<div class="card"><h3>Predictable Response</h3><p>Higher-priority irrigation and safety tasks meet hard deadlines under defined load.</p></div>
+<div class="card"><h3>Resource Efficiency</h3><p>Precise timing reduces waste of water, nutrients, and energy.</p></div>
+<div class="card"><h3>Equipment Protection</h3><p>Fail-safe defaults and monitoring help hold actuators in known-safe states.</p></div>
 </div>
+</section>
 
-<h2>High-Level System View (Client Perspective)</h2>
-<p class="note">This diagram shows the external relationships only. Internal scheduling algorithms, data structures, and implementation details remain confidential.</p>
-<div class="diagram">
-<div class="grid-arch">
-<div class="arch-box">
-<div class="arch-title">Field Sensors</div>
-<p>Soil moisture, temperature, flow, and environmental inputs</p>
-</div>
-<div class="arch-box">
-<div class="arch-title">Nityaga RTOS</div>
-<p>Deterministic scheduling layer enforcing timing bounds</p>
-</div>
-<div class="arch-box">
-<div class="arch-title">Actuators & Machinery</div>
-<p>Valves, pumps, motors, and safety interlocks</p>
-</div>
-<div class="arch-box">
-<div class="arch-title">Operator & Research Systems</div>
-<p>Monitoring, logging, and higher-level decision support</p>
-</div>
-</div>
-<p style="text-align:center; margin-top:20px; font-size:14px; color:#94a3b8;">External interfaces only — no internal architecture disclosed</p>
-</div>
-
-<h2>Why This Approach</h2>
+<section>
+<h2>Why Real-Time Guarantees Are Required</h2>
 <ul class="checks">
-<li>Agricultural operations run continuously and unattended for long periods</li>
-<li>Control actions often have physical consequences that cannot be undone</li>
-<li>Multiple concurrent tasks (sensing, control, logging, communication) must coexist without interference</li>
-<li>Battery-powered and remote nodes require efficient idle behavior</li>
+<li>Continuous unattended operation over long periods</li>
+<li>Physical actions that cannot be easily reversed</li>
+<li>Concurrent sensing, control, logging, and communication tasks</li>
+<li>Remote and battery-powered field nodes</li>
 <li>Safety and reliability take priority over general-purpose features</li>
 </ul>
+<p class="note"><strong>Scope:</strong> Nityaga RTOS provides timing and scheduling guarantees at the control layer. It does not replace application-level security, authentication, or higher-level farm management systems. Internal details remain confidential.</p>
+</section>
 
-<p class="note"><strong>Scope note:</strong> Nityaga RTOS provides timing and scheduling guarantees for the control layer. It does not replace application-level security, authentication, or higher-level farm management systems.</p>
-<p><a href="index.html">← Back to home</a> · <a href="how-it-works.html">How it works</a></p>
+<p><a href="index.html">← Back to home</a> · <a href="how-it-works.html">How it works</a> · <a href="security.html">Security model</a></p>
 </main>
-<footer class="foot"><div class="wrap"><p class="small">This site is informational. It sets no cookies and loads no third-party resources. Internal details remain confidential.</p></div></footer>
+<footer class="foot"><div class="wrap"><p class="small">Informational site only. No cookies, no third-party resources. Proprietary software of ASPF — internal algorithms remain confidential.</p></div></footer>
 </body>
 </html>
