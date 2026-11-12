@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<title>Importance & Need | Nityaga RTOS</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.diagram { background: #0f172a; border-radius: 16px; padding: 24px; margin: 32px 0; color: #e2e8f0; overflow-x: auto; }
+.flow { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; align-items: center; }
+.flow-step { background: #1e293b; border: 2px solid #22c55e; border-radius: 12px; padding: 16px 20px; min-width: 160px; text-align: center; font-weight: 600; }
+.flow-arrow { font-size: 28px; color: #22c55e; }
+.arch-box { background: #1e293b; border-radius: 12px; padding: 20px; margin: 8px; border: 1px solid #334155; }
+.arch-title { color: #22c55e; font-weight: 700; margin-bottom: 8px; }
+.grid-arch { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="index.html">Nityaga RTOS</a>
+<nav id="site-nav">
+<a href="index.html">Home</a>
+<a href="how-it-works.html">How it works</a>
+<a href="importance.html" aria-current="page">Importance</a>
+<a href="security.html">Security</a>
+<a href="about.html">About ASPF</a>
+</nav>
+</div>
+</header>
+<main id="main" class="wrap">
+<p class="eyebrow">Client Overview</p>
+<h1>Why Deterministic Control Matters in Agriculture</h1>
+<p>Modern agricultural systems depend on precise, timely responses. Delays or missed deadlines can affect yield, resource use, equipment safety, and operational reliability. Nityaga RTOS is designed to address these requirements at the control layer.</p>
+
+<h2>The Need for Real-Time Guarantees</h2>
+<div class="diagram">
+<div class="flow">
+<div class="flow-step">Sensor Reading</div>
+<div class="flow-arrow">→</div>
+<div class="flow-step">Decision Window</div>
+<div class="flow-arrow">→</div>
+<div class="flow-step">Actuator Response</div>
+<div class="flow-arrow">→</div>
+<div class="flow-step">Safe Outcome</div>
+</div>
+<p style="text-align:center; margin-top:16px; font-size:14px; color:#94a3b8;">Typical agricultural control path requiring bounded latency</p>
+</div>
+<p>General-purpose operating systems cannot provide the timing bounds required for irrigation valves, nutrient dosing, climate control, and machinery actuators. Missed deadlines lead to over- or under-application, equipment stress, or incomplete operations.</p>
+
+<h2>Client Benefits</h2>
+<div class="grid three">
+<div class="card"><h3>Predictable Response</h3><p>Higher-priority tasks always meet their deadlines under defined load. Irrigation and safety functions take precedence.</p></div>
+<div class="card"><h3>Resource Efficiency</h3><p>Precise timing reduces water, nutrient, and energy waste by acting only when conditions require it.</p></div>
+<div class="card"><h3>Equipment Protection</h3><p>Fail-safe defaults and watchdog monitoring help hold actuators in known-safe states on fault.</p></div>
+</div>
+
+<h2>High-Level System View (Client Perspective)</h2>
+<p class="note">This diagram shows the external relationships only. Internal scheduling algorithms, data structures, and implementation details remain confidential.</p>
+<div class="diagram">
+<div class="grid-arch">
+<div class="arch-box">
+<div class="arch-title">Field Sensors</div>
+<p>Soil moisture, temperature, flow, and environmental inputs</p>
+</div>
+<div class="arch-box">
+<div class="arch-title">Nityaga RTOS</div>
+<p>Deterministic scheduling layer enforcing timing bounds</p>
+</div>
+<div class="arch-box">
+<div class="arch-title">Actuators & Machinery</div>
+<p>Valves, pumps, motors, and safety interlocks</p>
+</div>
+<div class="arch-box">
+<div class="arch-title">Operator & Research Systems</div>
+<p>Monitoring, logging, and higher-level decision support</p>
+</div>
+</div>
+<p style="text-align:center; margin-top:20px; font-size:14px; color:#94a3b8;">External interfaces only — no internal architecture disclosed</p>
+</div>
+
+<h2>Why This Approach</h2>
+<ul class="checks">
+<li>Agricultural operations run continuously and unattended for long periods</li>
+<li>Control actions often have physical consequences that cannot be undone</li>
+<li>Multiple concurrent tasks (sensing, control, logging, communication) must coexist without interference</li>
+<li>Battery-powered and remote nodes require efficient idle behavior</li>
+<li>Safety and reliability take priority over general-purpose features</li>
+</ul>
+
+<p class="note"><strong>Scope note:</strong> Nityaga RTOS provides timing and scheduling guarantees for the control layer. It does not replace application-level security, authentication, or higher-level farm management systems.</p>
+<p><a href="index.html">← Back to home</a> · <a href="how-it-works.html">How it works</a></p>
+</main>
+<footer class="foot"><div class="wrap"><p class="small">This site is informational. It sets no cookies and loads no third-party resources. Internal details remain confidential.</p></div></footer>
+</body>
+</html>
