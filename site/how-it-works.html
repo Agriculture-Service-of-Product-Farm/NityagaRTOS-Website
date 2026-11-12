@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<title>How Nityaga RTOS Works | ASPF</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="index.html">Nityaga RTOS</a>
+<nav id="site-nav">
+<a href="index.html">Home</a>
+<a href="how-it-works.html" aria-current="page">How it works</a>
+<a href="security.html">Security</a>
+<a href="about.html">About ASPF</a>
+</nav>
+</div>
+</header>
+<main id="main" class="wrap">
+<p class="eyebrow">Scheduling model</p>
+<h1>How it works</h1>
+<p>Nityaga RTOS uses fixed-priority preemptive scheduling with optional round-robin within priority levels. Tasks declare periods and deadlines. The kernel enforces hard bounds on interrupt latency and context-switch time.</p>
+<h2>Core mechanisms</h2>
+<ul class="checks">
+<li>Priority inheritance on mutexes prevents unbounded priority inversion</li>
+<li>Tickless idle reduces power draw on battery nodes</li>
+<li>Watchdog integration and software monitors detect deadline misses</li>
+<li>Fail-safe defaults hold actuators in known-safe states on fault</li>
+</ul>
+<p class="note">Internal scheduling algorithms, timing analysis methods, and kernel data structures remain confidential.</p>
+<p><a href="index.html">← Back to home</a></p>
+</main>
+<footer class="foot"><div class="wrap"><p class="small">This site is informational. It sets no cookies and loads no third-party resources.</p></div></footer>
+</body>
+</html>

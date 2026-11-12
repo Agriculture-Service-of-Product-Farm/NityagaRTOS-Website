@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<title>Security Model | Nityaga RTOS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="index.html">Nityaga RTOS</a>
+<nav id="site-nav">
+<a href="index.html">Home</a>
+<a href="how-it-works.html">How it works</a>
+<a href="security.html" aria-current="page">Security</a>
+<a href="about.html">About ASPF</a>
+</nav>
+</div>
+</header>
+<main id="main" class="wrap">
+<p class="eyebrow">Security model</p>
+<h1>Real-time guarantees are not security</h1>
+<p>Nityaga RTOS provides deterministic scheduling and timing bounds. It does not authenticate messages, prevent deliberate attacks, or replace cryptographic controls.</p>
+<h2>What it protects</h2>
+<ul class="checks">
+<li>Priority inversion and unbounded blocking</li>
+<li>Deadline misses under defined load</li>
+<li>Stack overflow via canaries and optional MPU</li>
+<li>Unsafe actuator states on fault (fail-safe defaults)</li>
+</ul>
+<h2>What it does not protect</h2>
+<p>Deliberate modification of control messages, forged commands, or physical attacks on the device. Use authenticated encryption (AEAD) or a MAC on the application layer, with sequence numbers to prevent replay.</p>
+<h2>Reporting</h2>
+<p>Found a vulnerability? Report it privately through GitHub's <em>Report a vulnerability</em> button on the repository, or by email to <a href="mailto:sbruicesingh@haclon.in">sbruicesingh@haclon.in</a>. Do not open a public issue.</p>
+<p class="note">Nityaga RTOS is proprietary software of ASPF and is not open source. Any use requires a written licence agreement with ASPF.</p>
+<p><a href="index.html">← Back to home</a></p>
+</main>
+<footer class="foot"><div class="wrap"><p class="small">This site is informational. It sets no cookies and loads no third-party resources.</p></div></footer>
+</body>
+</html>
