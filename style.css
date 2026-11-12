@@ -21,11 +21,13 @@ h1 { font-size: clamp(32px, 5.4vw, 56px); margin: 6px 0 18px; font-weight: 800; 
 .grad { background: var(--text-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .top { position: sticky; top: 0; z-index: 30; background: color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
 .bar { display: flex; align-items: center; gap: 18px; padding: 12px 0; }
-.brand { font-weight: 700; text-decoration: none; color: var(--text); }
+.brand { display: inline-flex; align-items: center; text-decoration: none; }
+.brand-logo { height: 36px; width: auto; display: block; }
 #site-nav { display: flex; gap: 6px; margin-left: auto; }
 #site-nav a { color: var(--muted); text-decoration: none; padding: 7px 12px; border-radius: 999px; }
 #site-nav a:hover, #site-nav a[aria-current="page"] { color: var(--text); background: var(--surface-2); }
-.hero { padding: 64px 0 40px; text-align: center; }
+.hero { padding: 48px 0 40px; text-align: center; }
+.hero-logo { width: min(420px, 90%); height: auto; margin: 0 auto 20px; display: block; filter: drop-shadow(0 4px 12px rgb(0 0 0 / 8%)); }
 .eyebrow { color: var(--accent); font-weight: 650; letter-spacing: .06em; text-transform: uppercase; font-size: 12.5px; }
 .lead { font-size: clamp(17px, 2vw, 19.5px); color: var(--muted); max-width: 760px; margin-inline: auto; }
 .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; padding: 8px 0 48px; }
